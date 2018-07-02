@@ -1,8 +1,16 @@
-<input [(ngModel)]="newTodo.name"  autofocus="" placeholder="Ce qui doit etre fait ?" (keyup.enter)="createTodo()">
-<ul>
-  <li *ngFor="let todo of todos;">
-    {{todo.id}}
-    {{todo.name}}
-    <button (click)="deleteTodo(todo.id)">Supprimer</button>
-  </li>
-</ul>
+<div class="input-group mb-3 mx-auto w-25">
+  <input type="text" autofocus="" [(ngModel)]="newTodo.name" class="form-control" placeholder="Ce qui doit etre fait ?" aria-label="Ce qui doit etre fait ?" aria-describedby="basic-addon2" (keyup.enter)="createTodo()">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" (click)="createTodo()">Ajouter</button>
+  </div>
+</div>
+<section class="d-flex justify-content-center p-2">
+  <ul class="list-group w-50">
+    <li *ngFor="let todo of todos;" class="list-group-item">
+      {{todo.id}}
+      {{todo.name}}
+      <button (click)="deleteTodo(todo.id)">Supprimer</button>
+    </li>
+  </ul>
+</section>
+

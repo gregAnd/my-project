@@ -5,7 +5,6 @@ import { Todo} from '../model/todo';
   providedIn: 'root'
 })
 export class TodoListService {
-
   //automatic incrementation
   lastId = 0;
 
