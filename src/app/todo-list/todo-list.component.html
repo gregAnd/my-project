@@ -1,0 +1,11 @@
+<input [(ngModel)]="newTodo.name"  autofocus="" placeholder="Ce qui doit etre fait ?" (keyup.enter)="createTodo()">
+
+
+<ul>
+  <li *ngFor="let todo of todos; let key= index">
+    {{todo.id}}
+    {{todo.name}}
+    {{todo.isDone}}
+    <!--<button (click)="deleteTodo(key)">Supprimer</button>-->
+  </li>
+</ul>
