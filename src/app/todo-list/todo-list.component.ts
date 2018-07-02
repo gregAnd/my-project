@@ -9,7 +9,7 @@ import {TodoListService} from '../service/todo-list.service';
 })
 export class TodoListComponent implements OnInit {
   todos: Array<Todo>;
-  test: Todo = new Todo(null,true);
+  newTodo: Todo = new Todo();
 
   constructor(private todoListService: TodoListService) { }
 
@@ -17,10 +17,11 @@ export class TodoListComponent implements OnInit {
     this.todos = this.todoListService.getTodos();
   }
   createTodo() {
-    this.todoListService.createTodo(this.test);
+    this.todoListService.createTodo(this.newTodo);
+    this.newTodo = new Todo();
   }
-  deleteTodo(key: number) {
-    console.log(key);
-    this.todoListService.deleteTodo(key);
+  deleteTodo(id: number) {
+    console.log(id);
+    this.todoListService.deleteTodo(id);
   }
 }

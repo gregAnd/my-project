@@ -26,8 +26,7 @@ export class TodoListService {
   }
 
   /*Delete d'un element*/
-  // deleteTodo(key: number) {
-  //   this.todos.splice(key, 1);
-  // }
-
+  deleteTodo(id: number) {
+    this.todos.splice(id, 1);
+  }
 }
