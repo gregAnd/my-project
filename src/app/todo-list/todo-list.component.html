@@ -4,13 +4,11 @@
     <button class="btn btn-outline-secondary" type="button" (click)="createTodo()">Ajouter</button>
   </div>
 </div>
-<section class="d-flex justify-content-center p-2">
-  <ul class="list-group w-50">
-    <li *ngFor="let todo of todos;" class="list-group-item">
+<section class="d-flex flex-wrap p-2">
+    <div *ngFor="let todo of todos;" class="col-3 border border-secondary mb-3" style="height: 50px">
       {{todo.id}}
       {{todo.name}}
       <button (click)="deleteTodo(todo.id)">Supprimer</button>
-    </li>
-  </ul>
+    </div>
 </section>
 
